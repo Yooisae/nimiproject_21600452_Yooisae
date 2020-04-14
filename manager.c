@@ -26,3 +26,23 @@ void saveFile(Product p[], int count){
 	}
 	fclose(product);
 }
+int file_exist(){
+        FILE *pf;
+        pf = fopen("product.txt", "rt");
+        if(feof(pf)||pf==NULL)
+                return 0;
+        return 1;
+}
+int loadFile(Product p[]){
+        int count = 0;
+        FILE *product;
+        product = fopen("product.txt", "rt");
+        while(1){
+                fscanf(product,"%[^\n]\n", p[count].name);
+                fscanf(product,"%d %d %d\n", &p[count].weight, &p[count].price, &p[count].e_score);
+                count++;
+                if(feof(product)) break;
+        }
+        fclose(product);
+        return count;
+}
