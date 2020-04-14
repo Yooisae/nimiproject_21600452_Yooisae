@@ -117,3 +117,47 @@ while(1){
                 continue;
         }
 }
+void sort(Product p[], int count){
+        int num;
+        printf("==>정렬 할 기준을 선택해 주세요.(제품명:1, 가격:2, 별점:3): ");
+        scanf("%d", &num);
+        if(num == 1){
+                for(int i = 0 ; i < count-1 ; i++){
+                        for(int j = i+1 ; j < count ; j++){
+                                if(strcasecmp(p[i].name, p[j].name) > 0){
+                                        Product temp;
+                                        temp = p[i];
+                                        p[i]=p[j];
+                                        p[j] = temp;
+                                }
+                        }
+                }
+                list_product(p, count);
+        }
+        else if(num == 2){
+                for(int i = 0 ; i < count-1 ; i++){
+                        for(int j = i+1 ; j < count ; j++){
+                                if(p[i].price > p[j].price){
+                                        Product temp;
+                                        temp = p[i];
+                                        p[i]=p[j];
+                                        p[j] = temp;
+                                }
+                        }
+                }
+                list_product(p, count);
+        }
+        else if(num == 3){
+                for(int i = 0 ; i < count-1 ; i++){
+                        for(int j = i+1 ; j > count ; j++){
+                                if(p[i].e_score > p[j].e_score){
+                                        Product temp;
+                                        temp = p[i];
+                                        p[i]=p[j];
+                                        p[j] = temp;
+                                }
+                        }
+                }
+                list_product(p, count);
+        }
+}
