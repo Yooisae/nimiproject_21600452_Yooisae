@@ -5,7 +5,8 @@ reated by https://www.gitignore.io/api/c,vim,linux
 #Execut file
 market
 market_debug
-
+#text file
+product.txt
 # Prerequisites
 *.d
 

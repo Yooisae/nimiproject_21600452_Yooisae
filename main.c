@@ -1,5 +1,4 @@
 #include"manager.h"
-#define SIZE 50
 int selectmenu(){
         int menu;
         printf("\n");
@@ -16,17 +15,17 @@ int selectmenu(){
 int main(){
 	Product p[SIZE];
 	int count=0;
-	int culcount=0;
+	int culcount = 0;
 	int menu;
 	while(1){
 		menu = selectmenu();
 		if(menu==0){
-			printf("==>종료됨.\n");
+			printf("==종료됨.==\n");
 			break;
 		}
 		else if(menu==1){
 			if(count==0){
-			printf("==>입력된 데이터가 없습니다\n");
+			printf("==입력된 데이터가 없습니다.==\n");
 				continue;
 			}	
 			else
@@ -41,12 +40,12 @@ int main(){
 			#endif
 				count += add_product(&p[culcount]);
 				culcount++;
-				printf("==>입력완료!!\n");
+				printf("==입력완료==\n");
 			
 		}
 		else if(menu==3){
 			if(count==0){
-				printf("==>입력된 데이터가 없습니다.\n");
+				printf("==입력된 데이터가 없습니다.==\n");
 				continue;
 			}
 			else{		
@@ -55,12 +54,12 @@ int main(){
 				#endif
 					int no=select_No(p, culcount);
 					updata_product(&p[no-1]);
-					printf("수정완료!!\n");
+					printf("==수정완료==\n");
 			}
 		}
 		else if(menu==4){
 			if(count==0){
-				printf("==>삭제 할 데이터가 없습니다.\n");
+				printf("==삭제 할 데이터가 없습니다.==\n");
 				continue;
 			}
 			else{
@@ -70,9 +69,8 @@ int main(){
 					int no = select_No(p, culcount);
 					delete_product(&p[no-1]);
 					count--;
-					printf("삭제완료!!\n");
+					printf("==삭제완료==\n");
 			}		
 		}
-	
 	}
 }

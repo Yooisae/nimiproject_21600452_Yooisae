@@ -1,13 +1,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
+#define SIZE 50
 //제품의 내용을 하나로 묶기 위한 struct
 typedef struct{
     char name[50];//제품명
     int weight;//중량(g)
     int price;//가격(원)
-    int s_price;//표준가격(10g당 가격)
     int e_score;//별점수(1~5)
 }Product;
 

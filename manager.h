@@ -11,7 +11,10 @@ int select_No(Product p[], int count);
 void saveFile(Product p[], int count);
 
 //File을 불러오는 함수.(파일에 저장된 제품의 수를 return한다.)
-int loadFile();
+int loadFile(Product p[]);
+
+//file이 있는지 없는지 판단하는 함수
+int file_exist();
 
 //검색기능: 제품명을 검색 또는 표준가격과 가격의 범위를 입력해서 검색하는 기능.)
 void find(Product p[], int count);
