@@ -49,7 +49,7 @@ int loadFile(Product p[]){
 void find(Product p[], int count){
 while(1){
         int select;
-        printf("==>검색 할 항목을 입력 하세요.(이름:1, 가격:2, 별점:3, 종료:0)");
+        printf("==>검색 할 항목을 입력 하세요.(이름:1, 가격:2, 별점:3, 종료:0): ");
         scanf("%d", &select);
         getchar();
         Product newp[50];
