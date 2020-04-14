@@ -29,7 +29,7 @@ void saveFile(Product p[], int count){
 int file_exist(){
         FILE *pf;
         pf = fopen("product.txt", "rt");
-        if(feof(pf)||pf==NULL)
+        if(pf==NULL || feof(pf))
                 return 0;
         return 1;
 }
