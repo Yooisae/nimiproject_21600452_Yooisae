@@ -9,6 +9,7 @@ int selectmenu(){
 	printf("5. 저장\n");
         printf("6. 저장된 파일 가져오기\n");
         printf("7. 검색\n");
+        printf("8. 정렬\n");
         printf("0. 종료\n");
         printf("==>원하는 메뉴를 선택하세요.");
         scanf("%d", &menu);
@@ -135,6 +136,18 @@ int main(){
                                         printf("debug[%s]: %d %s\n", __FILE__, __LINE__, __FUNCTION__);
                                 #endif
                                         find(p, culcount);
+                        }
+                }
+                else if(menu==8){
+                        if(count==0){
+                                printf("==데이터가 없습니다.==\n");
+                                continue;
+                        }
+                        else{
+                                #ifdef DEBUG
+                                        printf("debug[%s]: %d %s\n", __FILE__, __LINE__, __FUNCTION__);
+                                #endif
+                                        sort(p, culcount);
                         }
                 }
 	}
