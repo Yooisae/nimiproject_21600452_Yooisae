@@ -117,6 +117,7 @@ while(1){
                 continue;
         }
 }
+}
 void sort(Product p[], int count){
         int num;
         printf("==>정렬 할 기준을 선택해 주세요.(제품명:1, 가격:2, 별점:3): ");
