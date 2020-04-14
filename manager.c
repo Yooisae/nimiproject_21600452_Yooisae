@@ -46,3 +46,74 @@ int loadFile(Product p[]){
         fclose(product);
         return count;
 }
+void find(Product p[], int count){
+while(1){
+        int select;
+        printf("==>검색 할 항목을 입력 하세요.(이름:1, 가격:2, 별점:3, 종료:0)");
+        scanf("%d", &select);
+        getchar();
+        Product newp[50];
+        if(select == 1){
+                char find_name[50];
+                printf("==>이름: ");
+                scanf("%[^\n]", find_name);
+                getchar();
+                int j = 0;
+                for(int i = 0 ; i < count ; i++){
+                        if(strcmp(p[i].name, find_name)==0){
+                                newp[j] = p[i];
+                                j++;
+                        }
+                }
+                if(j==0)
+                        printf("==입력하신 이름과 동일한 제품이 없습니다.==\n");
+                else
+                        list_product(newp, j);
+        }
+        else if(select == 2){
+                int find_price_min;
+                int find_price_max;
+                printf("==>가격의 범위를 입력해 주세요\n ");
+                printf("최소가격: ");
+                scanf("%d", &find_price_min);
+                printf("최대가격: ");
+                scanf("%d", &find_price_max);
+                int j = 0;
+                for(int i = 0 ; i < count ; i++){
+                        if(p[i].price >= find_price_min && p[i].price <= find_price_max){
+                                newp[j] = p[i];
+                                j++;
+                        }
+                }
+                if(j==0)
+                        printf("==입력하신 범위에  제품이 없습니다.==\n");
+                else
+                        list_product(newp, j);
+        }
+        else if(select == 3){
+                int find_e_score_min;
+                int find_e_score_max;
+                printf("==>별점의 범위를 입력해 주세요\n ");
+                printf("최소별점: ");
+                scanf("%d", &find_e_score_min);
+                printf("최대별점: ");
+                scanf("%d", &find_e_score_max);
+                int j = 0;
+                for(int i = 0 ; i < count ; i++){
+                        if(p[i].e_score >= find_e_score_min && p[i].e_score <= find_e_score_max){
+                                newp[j] = p[i];
+                                j++;
+                        }
+                }
+                if(j==0)
+                        printf("==입력하신 범위에 제품이 없습니다.==\n");
+                else
+                        list_product(newp, j);
+        }
+        else if(select == 0)
+                break;
+        else{
+                printf("==다시 입력해 주세요.==\n");
+                continue;
+        }
+}
