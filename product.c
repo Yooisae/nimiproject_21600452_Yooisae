@@ -7,8 +7,10 @@ int add_product(Product *p){
 	scanf("%d", &p->weight);
 	printf("==>제품의 가격을 입력해주세요.\n");
 	scanf("%d", &p->price);
-	printf("==>제품의 별점을 입력해주세요.\n");
+	printf("==>제품의 별점을 입력해주세요(0~5).\n");
 	scanf("%d", &p->e_score);
+	if(p->e_score>5 || p->e_score<0)
+		return 0;
 	return 1;
 }
 

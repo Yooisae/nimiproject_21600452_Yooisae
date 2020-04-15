@@ -65,9 +65,15 @@ int main(){
 			#ifdef DEBUG
 				printf("debug[%s]: %d %s\n", __FILE__, __LINE__, __FUNCTION__);
 			#endif
-				count += add_product(&p[culcount]);
-				culcount++;
-				printf("==입력완료==\n");
+				if(1== add_product(&p[culcount])){
+					culcount++;
+					count++;
+					printf("==입력완료==\n");
+				}
+				else{
+					printf("==입력오류==\n");
+					continue;
+				}
 			
 		}
 		else if(menu==3){
