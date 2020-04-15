@@ -80,6 +80,11 @@ int main(){
 					printf("debug[%s]: %d %s\n", __FILE__, __LINE__, __FUNCTION__);
 				#endif
 					int no=select_No(p, culcount);
+					if(no==0){
+						printf("==해당 번호에 제품이 없습니다==\n");
+						continue;
+					}
+					printf("%d", no);
 					updata_product(&p[no-1]);
 					printf("==수정완료==\n");
 			}

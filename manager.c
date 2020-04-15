@@ -4,7 +4,10 @@ int select_No(Product p[], int culcount){
 	int no;
 	printf("==>번호를 입력해주세요: ");
 	scanf("%d", &no);
-	return no;
+	if(no<1||no>=culcount||p[no-1].weight==-1)
+		return 0;
+	else
+		return no;
 }
 void list_product(Product p[], int count){
        	printf("NO 제품명                             중량  가격  표준가격  별점\n");
