@@ -154,7 +154,7 @@ void sort(Product p[], int count){
         else if(num == 3){
                 for(int i = 0 ; i < count-1 ; i++){
                         for(int j = i+1 ; j < count ; j++){
-                                if(p[i].e_score > p[j].e_score){
+                                if(p[i].e_score < p[j].e_score){
                                         Product temp;
                                         temp = p[i];
                                         p[i]=p[j];
