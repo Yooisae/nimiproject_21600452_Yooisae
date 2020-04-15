@@ -10,8 +10,8 @@ int select_No(Product p[], int culcount){
 		return no;
 }
 void list_product(Product p[], int count){
-       	printf("NO 제품명                             중량  가격  표준가격  별점\n");
-       	printf("================================================================\n");
+       	printf("NO 제품명                                 중량     가격  표준가격  별점\n");
+       	printf("=======================================================================\n");
        	for(int i=0;i<count;i++){
 		if(p[i].weight != -1){
 			printf("%d.", i+1);

@@ -17,7 +17,7 @@ int add_product(Product *p){
 void read_product(Product p){
 	int avr=0;
 	avr = (int)((double)p.price/((double)p.weight/10));
-	printf("%-35s %dg %5d원 %5d원 %5d\n", p.name, p.weight, p.price, avr, p.e_score);
+	printf("%-35s %6dg %8d원 %5d원 %4d\n", p.name, p.weight, p.price, avr, p.e_score);
 }
 
 int updata_product(Product *p){
