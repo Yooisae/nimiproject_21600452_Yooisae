@@ -105,9 +105,15 @@ int main(){
 					printf("debug[%s]: %d %s\n", __FILE__, __LINE__, __FUNCTION__);
 				#endif
 					int no = select_No(p, culcount);
-					delete_product(&p[no-1]);
-					count--;
-					printf("==삭제완료==\n");
+					if(no == 0){
+						printf("==삭제실패==\n");
+						continue;
+					}
+					else{
+						delete_product(&p[no-1]);
+						count--;
+						printf("==삭제완료==\n");
+					}
 			}		
 		}
                 else if(menu==5){
